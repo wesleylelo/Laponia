@@ -9,19 +9,19 @@
 int main(){
 	//declaração de variaveis
 	char tabuleiro[12][12] = {
-		{' ', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'},
-		{'1', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
-		{'2', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
+		{' ', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b'},
+		{'0', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+		{'1', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
+		{'2', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*', '*'},
 		{'3', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*', '*'},
 		{'4', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*', '*'},
-		{'5', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*', '*'},
+		{'5', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '*'},
 		{'6', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '*'},
-		{'7', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '*'},
+		{'7', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
 		{'8', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
 		{'9', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
-		{'10', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
-		{'11', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
-		{'12', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
+		{'a', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
+		{'b', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
 	};
 	char jogador[100], jogador1[100], jogador2[99];
 	int x,i, j, turno, jogada, proxjogada, inicio, fim;
@@ -34,21 +34,7 @@ int main(){
 	printf("Cada jogador terá 8 guerreiros básicos e 1 guerreiro especial!\n");
 	printf("Os guerreiros básicos serão marcados pelos números 1 e 2, já os especiais pelos caracteres @(para o jogador 1) e #(para o jogador 2)!\n");
 	printf("Guerreiros se movimentam somente uma casa por jogada e sempre na horizontal ou vertical, nunca na diagonal!\n");
-	
-	//sorteio para ver quem vai iniciar o jogo
-	do{
-		printf("Jogador (Insira seu apelido):\n");
-		scanf("%s", jogador);
-		i++;
-		system("cls");
-	}while(i<2);{
-		printf("O sorteado para começar o jogo é %s\n", jogador);
-	}
-	if(jogador1[1] == inicio){
-		jogador2[2] == proxjogada;
-	}else{
-		jogador2[2] == inicio;
-	}
+	printf("Quando os guerreiros @ e # estiverem lado a lado termina o jogo!\n");
 	
 	//Registro dos jogadores
 	printf("Querido usário, digite os nomes dos jogadores 1 e 2, por favor.\n");
@@ -58,6 +44,14 @@ int main(){
 	
 	printf("Jogador 2: ");
 	scanf("%s", jogador2);
+	
+	//sorteio para ver quem vai iniciar o jogo
+	printf("Escolha um numero entre 1 e 2: ", num);
+		if(num == 1){
+		printf("O jogador 1 inicia o jogo.\n");
+	}else{
+		printf("O jogador 2 inicia o jogo.\n");
+	}
 	
 	//Exibe o tabuleiro
 	
